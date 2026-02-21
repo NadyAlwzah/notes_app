@@ -4,34 +4,41 @@ import 'package:flutter/material.dart';
 class SimpleBlocObserver implements BlocObserver {
   @override
   void onChange(BlocBase bloc, Change change) {
-    // TODO: implement onChange
     debugPrint("change = $change");
   }
 
   @override
   void onClose(BlocBase bloc) {
-    // TODO: implement onClose
     debugPrint("close = $bloc");
   }
 
   @override
   void onCreate(BlocBase bloc) {
-    // TODO: implement onCreate
     debugPrint("create = $bloc");
   }
 
   @override
   void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
-    // TODO: implement onError
+    debugPrint("error = $error");
   }
 
   @override
   void onEvent(Bloc bloc, Object? event) {
-    // TODO: implement onEvent
+    debugPrint("event = $event");
   }
 
   @override
   void onTransition(Bloc bloc, Transition transition) {
-    // TODO: implement onTransition
+    debugPrint("transition = $transition");
+  }
+
+  @override
+  void onDone(
+    Bloc bloc,
+    Object? event, [
+    Object? error,
+    StackTrace? stackTrace,
+  ]) {
+    debugPrint("done = $bloc, event = $event, error = $error");
   }
 }

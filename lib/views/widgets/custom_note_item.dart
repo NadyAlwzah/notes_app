@@ -78,7 +78,9 @@ class NoteItem extends StatelessWidget {
                 right: 30,
               ),
               child: Text(
-                note.date.substring(0, 10),
+                (note.date.length == 10)
+                    ? note.date.substring(0, 10)
+                    : note.date.substring(0, 9),
                 style: TextStyle(
                   color: Colors.black.withOpacity(.4),
                   fontSize: 16,
